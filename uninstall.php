@@ -22,7 +22,7 @@
  * @link       https://github.com/SerhiiMazurBeetroot/
  * @since      1.0.0
  *
- * @package    Wp_Migrate_Gallery
+ * @package    WP_Migrate_Gallery
  */
 
 // If uninstall not called from WordPress, then exit.

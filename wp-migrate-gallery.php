@@ -10,12 +10,12 @@
  *
  * @link              https://github.com/SerhiiMazurBeetroot/
  * @since             1.0.0
- * @package           Wp_Migrate_Gallery
+ * @package           WP_Migrate_Gallery
  *
  * @wordpress-plugin
  * Plugin Name:       WP Migrate Gallery
  * Plugin URI:        https://github.com/SerhiiMazurBeetroot/wp-migrate-gallery
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This plugin was created to help you migrate your existing gallery from your old site.
  * Version:           1.0.0
  * Author:            Serhii Mazur
  * Author URI:        https://github.com/SerhiiMazurBeetroot/
@@ -30,6 +30,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+define( 'PLUGIN_NAME', 'wp-migrate-gallery' );
+
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
@@ -43,7 +45,7 @@ define( 'WP_MIGRATE_GALLERY_VERSION', '1.0.0' );
  */
 function activate_wp_migrate_gallery() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-migrate-gallery-activator.php';
-	Wp_Migrate_Gallery_Activator::activate();
+	WP_Migrate_Gallery_Activator::activate();
 }
 
 /**
@@ -52,7 +54,7 @@ function activate_wp_migrate_gallery() {
  */
 function deactivate_wp_migrate_gallery() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-migrate-gallery-deactivator.php';
-	Wp_Migrate_Gallery_Deactivator::deactivate();
+	WP_Migrate_Gallery_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_wp_migrate_gallery' );
@@ -75,7 +77,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-migrate-gallery.php';
  */
 function run_wp_migrate_gallery() {
 
-	$plugin = new Wp_Migrate_Gallery();
+	$plugin = new WP_Migrate_Gallery();
 	$plugin->run();
 
 }

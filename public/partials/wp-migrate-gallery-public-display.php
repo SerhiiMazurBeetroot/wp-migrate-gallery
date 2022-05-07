@@ -8,8 +8,8 @@
  * @link       https://github.com/SerhiiMazurBeetroot/
  * @since      1.0.0
  *
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/public/partials
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/public/partials
  */
 ?>
 

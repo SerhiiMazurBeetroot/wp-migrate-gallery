@@ -9,8 +9,8 @@
  * @link       https://github.com/SerhiiMazurBeetroot/
  * @since      1.0.0
  *
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/includes
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/includes
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/includes
  * @author     Serhii Mazur <serhiimazur@beetroot.se>
  */
-class Wp_Migrate_Gallery {
+class WP_Migrate_Gallery {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Wp_Migrate_Gallery {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Wp_Migrate_Gallery_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      WP_Migrate_Gallery_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -86,10 +86,10 @@ class Wp_Migrate_Gallery {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Wp_Migrate_Gallery_Loader. Orchestrates the hooks of the plugin.
-	 * - Wp_Migrate_Gallery_i18n. Defines internationalization functionality.
-	 * - Wp_Migrate_Gallery_Admin. Defines all hooks for the admin area.
-	 * - Wp_Migrate_Gallery_Public. Defines all hooks for the public side of the site.
+	 * - WP_Migrate_Gallery_Loader. Orchestrates the hooks of the plugin.
+	 * - WP_Migrate_Gallery_i18n. Defines internationalization functionality.
+	 * - WP_Migrate_Gallery_Admin. Defines all hooks for the admin area.
+	 * - WP_Migrate_Gallery_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -122,14 +122,20 @@ class Wp_Migrate_Gallery {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-migrate-gallery-public.php';
 
-		$this->loader = new Wp_Migrate_Gallery_Loader();
+		$this->loader = new WP_Migrate_Gallery_Loader();
 
+		/**
+		 * 
+		 * 
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-migrate-gallery-import.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-migrate-gallery-acf.php';
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Wp_Migrate_Gallery_i18n class in order to set the domain and to register the hook
+	 * Uses the WP_Migrate_Gallery_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +143,7 @@ class Wp_Migrate_Gallery {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Wp_Migrate_Gallery_i18n();
+		$plugin_i18n = new WP_Migrate_Gallery_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +158,7 @@ class Wp_Migrate_Gallery {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Wp_Migrate_Gallery_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new WP_Migrate_Gallery_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +174,7 @@ class Wp_Migrate_Gallery {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Wp_Migrate_Gallery_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new WP_Migrate_Gallery_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -199,7 +205,7 @@ class Wp_Migrate_Gallery {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Wp_Migrate_Gallery_Loader    Orchestrates the hooks of the plugin.
+	 * @return    WP_Migrate_Gallery_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

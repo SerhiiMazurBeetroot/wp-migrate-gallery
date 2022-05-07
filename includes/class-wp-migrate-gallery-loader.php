@@ -6,8 +6,8 @@
  * @link       https://github.com/SerhiiMazurBeetroot/
  * @since      1.0.0
  *
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/includes
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/includes
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/includes
  * @author     Serhii Mazur <serhiimazur@beetroot.se>
  */
-class Wp_Migrate_Gallery_Loader {
+class WP_Migrate_Gallery_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

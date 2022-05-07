@@ -6,8 +6,8 @@
  * @link       https://github.com/SerhiiMazurBeetroot/
  * @since      1.0.0
  *
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/includes
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/includes
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/includes
  * @author     Serhii Mazur <serhiimazur@beetroot.se>
  */
-class Wp_Migrate_Gallery_Deactivator {
+class WP_Migrate_Gallery_Deactivator {
 
 	/**
 	 * Short Description. (use period)

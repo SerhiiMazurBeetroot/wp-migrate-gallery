@@ -6,8 +6,8 @@
  * @link       https://github.com/SerhiiMazurBeetroot/
  * @since      1.0.0
  *
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/public
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Wp_Migrate_Gallery
- * @subpackage Wp_Migrate_Gallery/public
+ * @package    WP_Migrate_Gallery
+ * @subpackage WP_Migrate_Gallery/public
  * @author     Serhii Mazur <serhiimazur@beetroot.se>
  */
-class Wp_Migrate_Gallery_Public {
+class WP_Migrate_Gallery_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -65,10 +65,10 @@ class Wp_Migrate_Gallery_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Wp_Migrate_Gallery_Loader as all of the hooks are defined
+		 * defined in WP_Migrate_Gallery_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Wp_Migrate_Gallery_Loader will then create the relationship
+		 * The WP_Migrate_Gallery_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -88,10 +88,10 @@ class Wp_Migrate_Gallery_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Wp_Migrate_Gallery_Loader as all of the hooks are defined
+		 * defined in WP_Migrate_Gallery_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Wp_Migrate_Gallery_Loader will then create the relationship
+		 * The WP_Migrate_Gallery_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */

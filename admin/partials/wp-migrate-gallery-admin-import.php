@@ -35,13 +35,17 @@
     
     <h2>1. Steps:</h2>
     <ul>
-        <li>1.1. Install ACF</li>
+        <li>1.1. Install ACF PRO</li>
         <li>1.2. Create CPT Gallery</li>
         <li>1.3. Create  Gallery Taxomy</li>
         <li>1.4. Copy Gallery media files to project. This directory should have the following structure:</br></br>
             <img src="<?php echo plugin_dir_url( __DIR__ ) . 'img/tree.png' ?>" alt="Gallery Tree"></br></br>
         </li>
-        <li>1.5. ACF Custom Fields Sync Local JSON</li>
+        <li>1.5. Synchronized ACF JSON Custom Fields
+            <?php if($acf_exists) { ?>
+                <a href="/wp-admin/edit.php?post_type=acf-field-group&post_status=sync">here</a>
+            <?php } ?>
+        </li>
         <li>1.6. Fill in the information from the next point</li>
     </ul>
 
@@ -61,7 +65,7 @@
         <table class="form-table" role="presentation">
             <tbody>
                 <tr>
-                    <th>1. ACF plugin exists</th>
+                    <th>1. ACF PRO plugin exists</th>
                     <td>
                         <?php if($acf_exists) {
                             echo '<input name="acf" disabled checked="checked" type="checkbox">';

@@ -9,7 +9,7 @@
 ### 1.4. Copy Gallery media files to project. This directory should have the following structure:
 
 <p align="left">
-  <img alt="img-settings" src="./admin/img/tree.png" height="100%" width="50%">
+  <img alt="img-settings" src="./assets/img/tree.png" height="100%" width="50%">
 </p>
 
 ### 1.5. Synchronized ACF JSON Custom Fields
@@ -35,4 +35,24 @@
 - Gallery DIR exists
 - <button>Run</button>
 
+<br>
 
+## 2. Steps to Parse Images
+### 2.1. Fill in the information from the next point:
+- Site URL
+
+- Parser option
+
+- Container selector 
+
+- Dir title by attribute
+
+- Image wrapper selector
+
+- Subdirectory title
+
+- <button>Save</button>
+
+### 2.2. When all of the above is done, the checkbox will be checked:
+
+- <button>Run Parser</button>

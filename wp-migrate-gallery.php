@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://github.com/SerhiiMazurBeetroot/
- * @since             1.0.0
+ * @since             1.1.0
  * @package           WP_Migrate_Gallery
  *
  * @wordpress-plugin
  * Plugin Name:       WP Migrate Gallery
  * Plugin URI:        https://github.com/SerhiiMazurBeetroot/wp-migrate-gallery
  * Description:       This plugin was created to help you migrate your existing gallery from your old site.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Serhii Mazur
  * Author URI:        https://github.com/SerhiiMazurBeetroot/
  * License:           GPL-2.0+
@@ -30,21 +30,12 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'PLUGIN_NAME', 'wp-migrate-gallery' );
-
-/**
- * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
- */
-define( 'WP_MIGRATE_GALLERY_VERSION', '1.0.0' );
-
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-wp-migrate-gallery-activator.php
  */
 function activate_wp_migrate_gallery() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-migrate-gallery-activator.php';
+	require_once WPMG_PATH . 'includes/class-wp-migrate-gallery-activator.php';
 	WP_Migrate_Gallery_Activator::activate();
 }
 
@@ -53,18 +44,12 @@ function activate_wp_migrate_gallery() {
  * This action is documented in includes/class-wp-migrate-gallery-deactivator.php
  */
 function deactivate_wp_migrate_gallery() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-migrate-gallery-deactivator.php';
+	require_once WPMG_PATH . 'includes/class-wp-migrate-gallery-deactivator.php';
 	WP_Migrate_Gallery_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_wp_migrate_gallery' );
 register_deactivation_hook( __FILE__, 'deactivate_wp_migrate_gallery' );
-
-/**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
- */
-require plugin_dir_path( __FILE__ ) . 'includes/class-wp-migrate-gallery.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,9 +58,30 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-migrate-gallery.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since    1.1.0
  */
 function run_wp_migrate_gallery() {
+	define( 'WPMG_NAME', 'wp-migrate-gallery' );
+
+	// Defines the path to the main plugin file.
+	define( 'WPMG_FILE', __FILE__ );
+
+	// Defines the path to be used for includes.
+	define( 'WPMG_PATH', plugin_dir_path( WPMG_FILE ) );
+
+	// Defines the URL to the plugin.
+	define( 'WPMG_URL', plugin_dir_url( WPMG_FILE ) );
+
+	// Defines the current version of the plugin.
+	define( 'WPMG_VERSION', '1.1.0' );
+
+	define( 'WPMG_UPLOADS', WP_CONTENT_DIR . '/uploads/wpmg_uploads/' );
+
+	/**
+	 * The core plugin class that is used to define internationalization,
+	 * admin-specific hooks, and public-facing site hooks.
+	 */
+	require WPMG_PATH . 'includes/class-wp-migrate-gallery-main.php';
 
 	$plugin = new WP_Migrate_Gallery();
 	$plugin->run();

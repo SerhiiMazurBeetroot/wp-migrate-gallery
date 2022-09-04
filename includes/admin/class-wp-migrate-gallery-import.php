@@ -4,17 +4,17 @@
  * Generate Gallery functionality
  *
  * @link       #
- * @since      1.0.0
+ * @since      1.1.0
  *
  * @package    Migrate_Gallery
- * @subpackage Migrate_Gallery/includes
+ * @subpackage Migrate_Gallery/includes/admin
  */
 
 /**
  * Generate Gallery functionality
  *
  *
- * @since      1.0.0
+ * @since      1.1.0
  * @package    Migrate_Gallery
  * @subpackage Migrate_Gallery/includes
  * @author     Serhii Mazur <serhii.mazur@beetroot.se>
